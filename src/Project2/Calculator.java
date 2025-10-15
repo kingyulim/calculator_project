@@ -3,7 +3,7 @@ package Project2;
 import java.util.ArrayList;
 
 public class Calculator {
-    private ArrayList<Integer> resultList = new ArrayList<>();
+    private ArrayList<Integer> resultList = new ArrayList<>(); // 계산된 값을 저장 할 list
 
     /**
      * 각각의 연산을 담당하는 메소드
