@@ -39,8 +39,8 @@ public class Main {
             int operaterValue = calculator.operater(firstValue, secondValue, operator);
             ArrayList<Integer> operaterValueArr = calculator.getResultList();
 
-            System.out.println("저장된 값: " + operaterValueArr);
-            System.out.println("결과: " + operaterValue);
+            System.out.println("저장된 값 : " + operaterValueArr);
+            System.out.println("결과 : " + operaterValue);
 
             System.out.print("결과를 수정하시겠습니까? (yes/no) : ");
             String editAnswer = input.nextLine().trim();
