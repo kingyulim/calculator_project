@@ -54,15 +54,15 @@ public class Calculator {
     }
 
     /**
-     * 
-     * @return calculate 메소드에서 반환된 값들의 배열을 불러오는 메소드
+     * 메소드에서 반환된 값들의 배열을 불러오는 메소드
+     * @return calculate 계산되어 저장된 배열 반환
      */
     ArrayList<Integer> getResultList() {
         return resultList;
     }
 
     /**
-     * 
+     * 계산되어 저장된 배열을 수정하는 메소드
      * @param index 배열 인덱스 번호 인자
      * @param newValue 수정될 값 인자
      */
@@ -71,7 +71,7 @@ public class Calculator {
     }
 
     /**
-     * 
+     * 계산되어 저장된 배열을 삭제하는 메소드
      * @param index 배열에서 삭제할 인덱스 인자
      */
     void removeResult(int index) {
