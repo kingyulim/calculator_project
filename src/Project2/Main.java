@@ -42,11 +42,11 @@ public class Main {
             System.out.println("저장된 값: " + operaterValueArr);
             System.out.println("결과: " + operaterValue);
 
-            System.out.print("결과를 수정하시겠습니까? (yes/no): ");
+            System.out.print("결과를 수정하시겠습니까? (yes/no) : ");
             String editAnswer = input.nextLine().trim();
 
             if (editAnswer.equalsIgnoreCase("yes")) {
-                System.out.print("몇 번째 결과를 수정하시겠습니까? (0부터 시작): ");
+                System.out.print("몇 번째 결과를 수정하시겠습니까? (0부터 시작) : ");
 
                 if (!input.hasNextInt()) {
                     System.out.println("숫자만 입력해주세요.");
@@ -81,11 +81,11 @@ public class Main {
             }
 
             if (!calculator.getResultList().isEmpty()) {
-                System.out.print("결과를 삭제하시겠습니까? (yes/no): ");
+                System.out.print("결과를 삭제하시겠습니까? (yes/no) : ");
                 String removeAnswer = input.nextLine().trim();
 
                 if (removeAnswer.equalsIgnoreCase("yes")) {
-                    System.out.print("몇 번째 결과를 삭제하시겠습니까? (0부터 시작): ");
+                    System.out.print("몇 번째 결과를 삭제하시겠습니까? (0부터 시작) : ");
 
                     if (!input.hasNextInt()) {
                         System.out.println("숫자만 입력해주세요.");
