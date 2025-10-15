@@ -36,39 +36,6 @@ public class Main {
             char operator = input.next().charAt(0);
             input.nextLine();
 
-            int calValue = 0; // 최종 값 저장
-            switch (operator) {
-                case '+':
-                    calValue = firstValue + secondValue;
-
-                    break;
-
-                case '-':
-                    calValue = firstValue - secondValue;
-
-                    break;
-
-                case '*':
-                    calValue = firstValue * secondValue;
-
-                    break;
-
-                case '/':
-                    if (secondValue == 0) {
-                        System.out.println("0으로 나눌 수 없습니다.");
-
-                        continue;
-                    }
-                    calValue = firstValue / secondValue;
-
-                    break;
-
-                default:
-                    System.out.println("잘못된 연산자입니다.");
-
-                    continue;
-            }
-
             int operaterValue = calculator.operater(firstValue, secondValue, operator);
             ArrayList<Integer> operaterValueArr = calculator.getResultList();
 
