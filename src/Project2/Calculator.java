@@ -37,6 +37,7 @@ public class Calculator {
 
                     return 0;
                 }
+
                 resultValue = firstNumber / secondNumber;
 
                 break;
