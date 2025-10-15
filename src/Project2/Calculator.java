@@ -18,26 +18,32 @@ public class Calculator {
         switch (operator) {
             case '+':
                 resultValue = firstNumber + secondNumber;
+
                 break;
 
             case '-':
                 resultValue = firstNumber - secondNumber;
+
                 break;
 
             case '*':
                 resultValue = firstNumber * secondNumber;
+
                 break;
 
             case '/':
                 if (secondNumber == 0) { // 0은 나눌 수 없으니 조건 사용
                     System.out.println("0으로 나눌 수 없습니다.");
+
                     return 0;
                 }
                 resultValue = firstNumber / secondNumber;
+
                 break;
 
             default: // 잘못된 연산자 입력 시 예외 처리
                 System.out.println("올바르지 않은 연산자입니다.");
+
                 return 0;
         }
 
