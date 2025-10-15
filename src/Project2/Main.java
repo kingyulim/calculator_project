@@ -104,7 +104,7 @@ public class Main {
                     }
 
                     calculator.removeResult(index);
-                    System.out.println("삭제 완료 현재 저장된 값: " + calculator.getResultList());
+                    System.out.println("삭제 완료 현재 저장된 값 : " + calculator.getResultList());
                 }
             }
 
