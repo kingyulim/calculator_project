@@ -1,9 +1,8 @@
 package Project3;
 
 public class Calculator {
-    <S> S operate () {
-
-        return null;
+    <S extends Number> double operate (S firstValue, S secondValue, OperatorEnum symbol) {
+        return symbol.OperatorValue(firstValue.doubleValue(), secondValue.doubleValue());
     }
 }
 
