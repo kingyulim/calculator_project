@@ -38,7 +38,7 @@ enum OperatorEnum {
 
 
 
-    //기능
+    // 기능
     /**
      * 사칙연산 추상화 메소드
      * @param a 첫번째로 계산될 인자
@@ -46,14 +46,6 @@ enum OperatorEnum {
      * @return 각각의 사칙연산이 된 값 반환
      */
     abstract double OperatorValue(double a, double b);
-
-    /**
-     * 생성자에 들어온 a 값(+ - * /) 반환
-     * @return
-     */
-    public char getOperatorSymbol() {
-        return symbol;
-    }
 
     /**
      * OperatorEnum 상수 키 값에 할당된 값을 반환 하는 메소드
