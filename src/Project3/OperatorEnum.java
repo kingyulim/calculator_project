@@ -52,7 +52,7 @@ enum OperatorEnum {
     /**
      * OperatorEnum 상수 키 값에 할당된 값을 반환 하는 메소드
      * @param symbol
-     * @return +, -, *, / 이 들어오면 거기에 맞는 symbol이 반환 될 것이고 아니라면 null이 반환
+     * @return +, -, *, / 이 들어오면 거기에 맞는 상수가 반환 될 것이고 아무것도 맞지 않다면 null을 반환
      */
     static OperatorEnum fromSymbol(char symbol) {
         if (symbol == '+') {
