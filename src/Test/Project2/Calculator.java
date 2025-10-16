@@ -1,4 +1,4 @@
-package Project2;
+package Test.Project2;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class Calculator {
      * @param operator 연산자 인자
      * @return 연산된 값 반환
      */
-    int operater(int firstNumber, int secondNumber, char operator) {
+    Integer operater(int firstNumber, int secondNumber, char operator) {
         int resultValue = 0; // 계산된 값을 저장할 변수
 
         switch (operator) {
@@ -35,7 +35,7 @@ public class Calculator {
                 if (secondNumber == 0) { // 0은 나눌 수 없으니 조건 사용
                     System.out.println("0으로 나눌 수 없습니다.");
 
-                    return 0;
+                    return null;
                 }
 
                 resultValue = firstNumber / secondNumber;

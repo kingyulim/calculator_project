@@ -1,4 +1,4 @@
-package Project3;
+package Test.Project3;
 
 enum OperatorEnum {
     // 속성
