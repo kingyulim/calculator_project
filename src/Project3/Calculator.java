@@ -1,6 +1,13 @@
 package Project3;
 
 public class Calculator {
+    // 속성
+
+
+    // 생성자
+
+
+    // 기능
     /**
      * 정수, 실수 계산기 메소드
      * @param firstValue 첫번쨰 인자 (정수, 실수)

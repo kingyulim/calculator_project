@@ -1,6 +1,7 @@
 package Project3;
 
 enum OperatorEnum {
+    // 속성
     ADD ('+') {
         @Override
         double OperatorValue(double a, double b){
@@ -26,6 +27,18 @@ enum OperatorEnum {
         }
     };
 
+    private final char symbol;
+
+
+
+    //생성자
+    OperatorEnum(char a) {
+        this.symbol = a;
+    }
+
+
+
+    //기능
     /**
      * 사칙연산 추상화 메소드
      * @param a 첫번째로 계산될 인자
@@ -33,13 +46,6 @@ enum OperatorEnum {
      * @return 각각의 사칙연산이 된 값 반환
      */
     abstract double OperatorValue(double a, double b);
-
-    private final char symbol;
-
-    //생성자
-    OperatorEnum(char a) {
-        this.symbol = a;
-    }
 
     /**
      * 생성자에 들어온 a 값(+ - * /) 반환
