@@ -36,10 +36,15 @@ enum OperatorEnum {
 
     private final char symbol;
 
+    //생성자
     OperatorEnum(char a) {
         this.symbol = a;
     }
 
+    /**
+     * 생성자에 들어온 a 값(+ - * /) 반환
+     * @return
+     */
     public char getOperatorSymbol() {
         return symbol;
     }
