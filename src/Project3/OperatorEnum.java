@@ -55,11 +55,11 @@ enum OperatorEnum {
     static OperatorEnum fromSymbol(char symbol) {
         if (symbol == '+') {
             return ADD;
-        }else if (symbol == '-') {
+        } else if (symbol == '-') {
             return SUBTRACT;
-        }else if (symbol == '*') {
+        } else if (symbol == '*') {
             return MULTIPLY;
-        }else if (symbol == '/') {
+        } else if (symbol == '/') {
             return DIVIDE;
         }
 
