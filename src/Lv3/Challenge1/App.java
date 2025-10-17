@@ -40,11 +40,6 @@ public class App {
              * 연산 시작
              */
             double sumValue = calculator.operatorMethod(firstValue, secondValue, operator);
-            if(!"+-*/".contains(String.valueOf(operator))) {
-                System.out.println("올바른 사칙 연산 기호가 아닙니다.");
-
-                continue;
-            }
 
             if (operator == '/') {
                 if (secondValue == 0) {

@@ -62,7 +62,7 @@ public class App {
 
             System.out.println("===================");
 
-            System.out.println("결과 : " + firstValue + " " + operator + " " + secondValue + " = " + sumValue);
+            System.out.println("결과 : " + conditionString);
 
             System.out.println("===================");
 

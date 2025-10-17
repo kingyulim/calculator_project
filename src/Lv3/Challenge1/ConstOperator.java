@@ -1,6 +1,6 @@
 package Lv3.Challenge1;
 
-public enum ConstOperator {
+enum ConstOperator {
     ADD{
         @Override
         double operate(double firstValue, double secondValue) {
