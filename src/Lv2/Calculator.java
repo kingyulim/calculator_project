@@ -1,9 +1,11 @@
 package Lv2;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Calculator {
     private ArrayList<Integer> resultArray =  new ArrayList<>(); // 계산된 값 저장
+
 
     /**
      * 사칙연산 메소드
@@ -41,14 +43,60 @@ public class Calculator {
                 result = firstValue / secondValue;
 
                 break;
-
-            default:
-                return "no_operator";
         }
 
         resultArray.add(result);
         return result;
     }
+
+    /**
+     * 값 입력 메소드
+     * @param input
+     * @param prompt
+     * @return 무조건 숫자만 반환
+     */
+   int intInputMethod(Scanner input, String prompt) {
+       while (true) {
+           System.out.print(prompt + " 값을 입력해주세요 : ");
+
+           if (!input.hasNextInt()) {
+               System.out.println("숫자만 입력해주세요.");
+               input.next();
+
+               continue;
+           }
+
+           int value = input.nextInt();
+
+           if (value < 0) {
+               System.out.println("양수만 입력해주세요.");
+
+               continue;
+           }
+
+           return value;
+       }
+   }
+
+    /**
+     * 연산자 검사 메소드
+     * @param input
+     * @return 연산자 반환
+     */
+   char operateCheckMethod (Scanner input) {
+       while (true) {
+           System.out.print("연산기호를 입력해주세요 (+ - * /) : ");
+
+           char operator = input.next().charAt(0);
+           if(!"+-*/".contains(String.valueOf(operator))) {
+               System.out.println("올바른 연산자가 들어오지 않았습니다.");
+
+               continue;
+           }
+
+           return operator;
+       }
+   }
 
     /**
      * 계산된 값 반환 메소드

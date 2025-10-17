@@ -20,48 +20,21 @@ public class App {
             /**
              * 첫번쨰 값 설정
              */
-            System.out.print("첫번째 값을 입력해주세요 : ");
-            if (!input.hasNextDouble()) {
-                System.out.println("숫자만 입력해주세요.");
-                input.next();
-
-                continue;
-            }
-            double firstValue = input.nextDouble();
+            double firstValue = calculator.doubleInputMethod(input, "첫번째");
             input.nextLine();
 
-            if (firstValue < 0) {
-                System.out.println("양수만 입력해주세요.");
-
-                continue;
-            }
 
             /**
              * 연산자 설정
              */
-            System.out.print("연산기호를 입력해주세요 (+ - * /) : ");
-            char operator = input.next().charAt(0);
-
+            char operator = calculator.operateCheckMethod(input);
             input.nextLine();
 
             /**
              * 두번째 값 설정
              */
-            System.out.print("두번째 값을 입력해주세요 : ");
-            if (!input.hasNextDouble()) {
-                System.out.println("숫자만 입력해주세요.");
-                input.next();
-
-                continue;
-            }
-            double secondValue = input.nextDouble();
+            double secondValue = calculator.doubleInputMethod(input, "두번째");
             input.nextLine();
-
-            if (secondValue < 0) {
-                System.out.println("양수만 입력해주세요.");
-
-                continue;
-            }
 
             /**
              * 연산 시작
@@ -96,7 +69,7 @@ public class App {
             /**
              * 수정 할 값 생성
              */
-            System.out.print("수정 할 값이 있습니까? (yes/no) : ");
+            System.out.print("수정 할 값이 있습니까? (수정 커멘드 : yes) : ");
             String updateResult = input.nextLine();
             if (updateResult.equalsIgnoreCase("yes")) {
                 System.out.print("수정할 번호 : ");
@@ -136,7 +109,7 @@ public class App {
             /**
              * 삭제 할 값 생성
              */
-            System.out.print("삭제 할 값이 있습니까? (yes/no) : ");
+            System.out.print("삭제 할 값이 있습니까? (삭제 커멘트 : yes) : ");
             String removeResult = input.nextLine();
             if (removeResult.equalsIgnoreCase("yes")) {
                 System.out.print("삭제할 번호 : ");
