@@ -12,7 +12,7 @@ public class Calculator {
      * @param operator 연산자 인자
      * @return 연산된 값 반환
      */
-    Integer operater(int firstNumber, int secondNumber, char operator) {
+    int operater(int firstNumber, int secondNumber, char operator) {
         int resultValue = 0; // 계산된 값을 저장할 변수
 
         switch (operator) {
@@ -34,8 +34,6 @@ public class Calculator {
             case '/':
                 if (secondNumber == 0) { // 0은 나눌 수 없으니 조건 사용
                     System.out.println("0으로 나눌 수 없습니다.");
-
-                    return null;
                 }
 
                 resultValue = firstNumber / secondNumber;
@@ -44,8 +42,6 @@ public class Calculator {
 
             default: // 잘못된 연산자 입력 시 예외 처리
                 System.out.println("올바르지 않은 연산자입니다.");
-
-                return 0;
         }
 
         resultList.add(resultValue); // 계산된 값 저장

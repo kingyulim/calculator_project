@@ -13,7 +13,7 @@ public class App {
 
         int cnt = 0;
         while (true) {
-            if(cnt > 0){
+            if (cnt > 0) {
                 System.out.println("===================");
             }
 
