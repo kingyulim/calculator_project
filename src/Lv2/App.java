@@ -11,7 +11,12 @@ public class App {
 
         System.out.println("class를 사용한 사칙연산 계산기 입니다.\n===================");
 
+        int cnt = 0;
         while (true) {
+            if (cnt > 0) {
+                System.out.println("===================");
+            }
+
             /**
              * 첫번쨰 값 설정
              */
@@ -166,6 +171,8 @@ public class App {
                 System.out.println("계산기를 종료 합니다.");
 
                 break;
+            } else {
+                cnt++;
             }
         }
     }
