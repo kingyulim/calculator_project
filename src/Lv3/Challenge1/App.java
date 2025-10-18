@@ -55,7 +55,7 @@ public class App {
 
             System.out.println("===================\n저장된 값 : " + resultString + "\n===================");
 
-            System.out.println("===================\n결과 : " + firstValue + " " + operator + " " + secondValue + " = " + sumValue + "\n===================");
+            System.out.println("결과 : " + firstValue + " " + operator + " " + secondValue + " = " + sumValue + "\n===================");
 
             /**
              * 수정 삭제 실행

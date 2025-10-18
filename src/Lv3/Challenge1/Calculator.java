@@ -55,6 +55,8 @@ public class Calculator {
      * @return 무조건 숫자만 반환
      */
     double doubleInputMethod(Scanner input, String prompt) {
+        double doubleValue = 0;
+
         while (true) {
             System.out.print(prompt + " 값을 입력해주세요 : ");
 
@@ -73,8 +75,12 @@ public class Calculator {
                 continue;
             }
 
-            return value;
+            doubleValue = value;
+
+            break;
         }
+
+        return doubleValue;
     }
 
     /**
@@ -83,6 +89,8 @@ public class Calculator {
      * @return 연산자 반환
      */
     String operateCheckMethod (Scanner input) {
+        String operatorData = "";
+
         while (true) {
             System.out.print("연산기호를 입력해주세요 (+ - * /) : ");
             String operator = input.nextLine();
@@ -93,8 +101,12 @@ public class Calculator {
                 continue;
             }
 
-            return operator;
+            operatorData = operator;
+
+            break;
         }
+
+        return operatorData;
     }
 
     /**
