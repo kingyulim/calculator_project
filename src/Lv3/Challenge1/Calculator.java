@@ -19,26 +19,26 @@ public class Calculator {
      * @return 계산된 값 반환
      * @param <N>
      */
-    <N extends Number> double operatorMethod(N firstValue, N secondValue, char operator) {
+    <N extends Number> double operatorMethod(N firstValue, N secondValue, String operator) {
         double result = 0;
 
         switch (operator) {
-            case '+':
+            case "+":
                 result = add.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
 
-            case '-':
+            case "-":
                 result = sub.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
 
-            case '*':
+            case "*":
                 result = mul.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
 
-            case '/':
+            case "/":
                 result = div.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
@@ -82,12 +82,12 @@ public class Calculator {
      * @param input
      * @return 연산자 반환
      */
-    char operateCheckMethod (Scanner input) {
+    String operateCheckMethod (Scanner input) {
         while (true) {
             System.out.print("연산기호를 입력해주세요 (+ - * /) : ");
+            String operator = input.nextLine();
 
-            char operator = input.next().charAt(0);
-            if(!"+-*/".contains(String.valueOf(operator))) {
+            if (operator.length() > 1 && !"+-*/".contains(String.valueOf(operator))) {
                 System.out.println("올바른 연산자가 들어오지 않았습니다.");
 
                 continue;
@@ -95,6 +95,25 @@ public class Calculator {
 
             return operator;
         }
+    }
+
+    /**
+     * 저장된 값 배열 문자열로 뽑아오기
+     * @param resultArray 뽑아올 배열
+     * @return 현재 존재하는 배열 데이터 문자열로 반환
+     */
+    String thisArrayReturn (ArrayList resultArray) {
+        String resultString = "";
+
+        for(int a = 0; a < resultArray.size(); a++){
+            if(a > 0){
+                resultString += ", ";
+            }
+
+            resultString += resultArray.get(a);
+        }
+
+        return resultString;
     }
 
     /**

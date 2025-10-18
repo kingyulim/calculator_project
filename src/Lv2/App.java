@@ -58,7 +58,17 @@ public class App {
              * 연산 결과 출력
              */
             ArrayList<Integer> getResultList = calculator.getResultArray();
-            System.out.println("저장된 값 : " + getResultList);
+            String resultString = "";
+
+            for(int a = 0; a < getResultList.size(); a++){
+                if(a > 0){
+                    resultString += ", ";
+                }
+
+                resultString += getResultList.get(a);
+            }
+
+            System.out.println("저장된 값 : " + resultString);
 
             System.out.println("===================");
 

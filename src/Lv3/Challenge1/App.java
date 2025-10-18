@@ -23,12 +23,10 @@ public class App {
             double firstValue = calculator.doubleInputMethod(input, "첫번째");
             input.nextLine();
 
-
             /**
              * 연산자 설정
              */
-            char operator = calculator.operateCheckMethod(input);
-            input.nextLine();
+            String operator = calculator.operateCheckMethod(input);
 
             /**
              * 두번째 값 설정
@@ -41,7 +39,7 @@ public class App {
              */
             double sumValue = calculator.operatorMethod(firstValue, secondValue, operator);
 
-            if (operator == '/') {
+            if (operator == "/") {
                 if (secondValue == 0) {
                     System.out.println("0으로 나눌 수 없습니다.");
 
@@ -53,7 +51,11 @@ public class App {
              * 연산 결과 출력
              */
             ArrayList<Double> getResultList = calculator.getResultArray();
-            System.out.println("저장된 값 : " + getResultList);
+            String resultString = calculator.thisArrayReturn(getResultList);
+
+            System.out.println("===================");
+
+            System.out.println("저장된 값 : " + resultString);
 
             System.out.println("===================");
 
@@ -62,78 +64,88 @@ public class App {
             System.out.println("===================");
 
             /**
-             * 수정 할 값 생성
+             * 수정 삭제 실행
              */
-            System.out.print("수정 할 값이 있습니까? (수정 커멘드 : yes) : ");
-            String updateResult = input.nextLine();
-            if (updateResult.equalsIgnoreCase("yes")) {
-                System.out.print("수정할 번호 : ");
+            while (true) {
+                System.out.print("수정이나 삭제할 커멘트를 입력해주세요 없다면 엔터를 눌러 다음으로 넘어갑니다.\n(수정 : edit) (삭제 : del) : ");
+                String setCommendInput = input.nextLine();
 
-                if (!input.hasNextInt()) {
-                    System.out.println("숫자만 입력해주세요.");
-                    input.next();
+                if(setCommendInput.equalsIgnoreCase("edit")) {
+                    while (true) {
+                        System.out.print("수정할 번호 : ");
+
+                        if (!input.hasNextInt()) {
+                            System.out.println("숫자만 입력해주세요.");
+                            input.next();
+
+                            continue;
+                        }
+
+                        int updateIndex = input.nextInt();
+                        input.nextLine();
+
+                        if (getResultList.size() <= updateIndex || updateIndex < 0) {
+                            System.out.println("잘못된 인덱스 입니다.");
+
+                            continue;
+                        }
+
+                        System.out.print("새로운 값을 입력해주세요 : ");
+
+                        if (!input.hasNextInt()) {
+                            System.out.println("숫자만 입력해주세요.");
+                            input.next();
+
+                            continue;
+                        }
+
+                        int newValue = input.nextInt();
+                        input.nextLine();
+
+                        calculator.updateResultArray(updateIndex, newValue);
+                        System.out.println("===================\n수정완료 현재 저장된 값 : " + calculator.thisArrayReturn(calculator.getResultArray()) + "\n===================");
+
+                        break;
+                    }
 
                     continue;
-                }
+                }else if(setCommendInput.equalsIgnoreCase("del")) {
+                    while (true) {
+                        System.out.print("삭제할 번호 : ");
 
-                int updateIndex = input.nextInt();
-                input.nextLine();
+                        if (!input.hasNextInt()) {
+                            System.out.println("숫자만 입력해주세요.");
+                            input.next();
 
-                if (getResultList.size() <= updateIndex || updateIndex < 0) {
-                    System.out.println("잘못된 인덱스 입니다.");
+                            continue;
+                        }
+
+                        int removeIndex = input.nextInt();
+                        input.nextLine();
+
+                        if (getResultList.size() <= removeIndex || removeIndex < 0) {
+                            System.out.println("잘못된 인덱스 입니다.");
+
+                            continue;
+                        }
+
+                        calculator.removeResultArray(removeIndex);
+                        System.out.println("===================\n삭제완료 현재 저장된 값 : " + calculator.thisArrayReturn(calculator.getResultArray()) + "\n===================");
+
+                        break;
+                    }
 
                     continue;
+                } else {
+                    break;
                 }
-
-                System.out.print("새로운 값을 입력해주세요 : ");
-
-                if (!input.hasNextInt()) {
-                    System.out.println("숫자만 입력해주세요.");
-                    input.next();
-
-                    continue;
-                }
-
-                int newValue = input.nextInt();
-                input.nextLine();
-
-                calculator.updateResultArray(updateIndex, newValue);
-                System.out.println("===================\n수정완료 현재 저장된 값 : " + calculator.getResultArray() + "\n===================");
             }
 
-            /**
-             * 삭제 할 값 생성
-             */
-            System.out.print("삭제 할 값이 있습니까? (삭제 커멘트 : yes) : ");
-            String removeResult = input.nextLine();
-            if (removeResult.equalsIgnoreCase("yes")) {
-                System.out.print("삭제할 번호 : ");
-
-                if (!input.hasNextInt()) {
-                    System.out.println("숫자만 입력해주세요.");
-                    input.next();
-
-                    continue;
-                }
-
-                int removeIndex = input.nextInt();
-                input.nextLine();
-
-                if (getResultList.size() <= removeIndex || removeIndex < 0) {
-                    System.out.println("잘못된 인덱스 입니다.");
-
-                    continue;
-                }
-
-                calculator.removeResultArray(removeIndex);
-                System.out.println("===================\n삭제완료 현재 저장된 값 : " + calculator.getResultArray() + "\n===================");
-            }
-
-            System.out.print(".\n.\n.\n.\n.\n.\n 종료 하시겠습니까? (종료 커맨드 : exit) : ");
+            System.out.print(".\n.\n.\n.\n.\n.\n종료 하시겠습니까 계속 진행 하시려면 엔터를 눌러주세요.\n(종료 커맨드 : exit) : ");
             String exitCommend = input.nextLine();
 
             if (exitCommend.equalsIgnoreCase("exit")) {
-                System.out.println("계산기를 종료 합니다.");
+                System.out.println("===================\n계산기를 종료 합니다.");
 
                 break;
             } else {
