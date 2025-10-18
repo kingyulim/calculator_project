@@ -104,13 +104,18 @@ public class Calculator {
      */
     String thisArrayReturn (ArrayList resultArray) {
         String resultString = "";
+        int length = resultArray.size();
 
-        for(int a = 0; a < resultArray.size(); a++){
-            if(a > 0){
-                resultString += ", ";
+        if (length == 0) {
+            resultString = "값 없음";
+        } else {
+            for(int a = 0; a < resultArray.size(); a++){
+                if(a > 0){
+                    resultString += ", ";
+                }
+
+                resultString += resultArray.get(a);
             }
-
-            resultString += resultArray.get(a);
         }
 
         return resultString;
