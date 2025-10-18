@@ -122,7 +122,7 @@ public class Calculator {
             resultString = "값 없음";
         } else {
             for(int a = 0; a < resultArray.size(); a++){
-                if(a > 0){
+                if (a > 0) {
                     resultString += ", ";
                 }
 
