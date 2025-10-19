@@ -1,4 +1,4 @@
-package Lv3.Challenge1;
+package Lv3;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -131,6 +131,17 @@ public class App {
 
                     continue;
                 } else {
+                    break;
+                }
+            }
+
+            System.out.print("===================\n저장된 값중 내가 지정한 큰 결과값들을 출력 하시겠습니까?\n없다면 엔터를 눌러주세요.\n(출력 커멘드 : yes) : ");
+            String maxValueCommendInput = input.nextLine();
+            if (maxValueCommendInput.equalsIgnoreCase("yes")) {
+                while (true) {
+                    System.out.print("값을 지정해주세요 : ");
+                    int maxValueInput = input.nextInt();
+
                     break;
                 }
             }

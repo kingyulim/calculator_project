@@ -1,4 +1,4 @@
-package Lv3.Challenge1;
+package Lv3;
 
 enum ConstOperator {
     ADD{

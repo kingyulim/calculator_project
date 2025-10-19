@@ -88,7 +88,7 @@ public class Calculator {
            System.out.print("연산기호를 입력해주세요 (+ - * /) : ");
 
            String operator = input.nextLine();
-           if(operator.length() > 1 && !"+-*/".contains(String.valueOf(operator))) {
+           if(operator.length() > 1 || !"+-*/".contains(String.valueOf(operator))) {
                System.out.println("올바른 연산자가 들어오지 않았습니다.");
 
                continue;
