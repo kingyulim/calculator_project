@@ -34,9 +34,19 @@ enum ConstOperator {
         this.operateString = symbol;
     }
 
+    /**
+     * 계산식 추상화 생성
+     * @param firstValue
+     * @param secondValue
+     * @return 재정의 된 각 상수의 값 반환
+     */
     abstract double operate(double firstValue, double secondValue);
 
-
+    /**
+     * 연산기호 반환 공용 class
+     * @param symbol
+     * @return 내가 입력한 심볼 키 값 반환
+     */
     static ConstOperator operateConstReturn (String symbol) {
         for (ConstOperator data : ConstOperator.values()) {
             if(data.operateString.equals(symbol)){
