@@ -3,15 +3,9 @@ package Lv3;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Calculator {
     private ArrayList<Double> resultArray = new ArrayList<>(); // 계산된 값 저장 배열
-
-    ConstOperator add = ConstOperator.ADD;
-    ConstOperator sub = ConstOperator.SUB;
-    ConstOperator mul = ConstOperator.MUL;
-    ConstOperator div = ConstOperator.DIV;
 
     /**
      * 사칙연산 메소드
@@ -26,22 +20,22 @@ public class Calculator {
 
         switch (operator) {
             case "+":
-                result = add.operate(firstValue.doubleValue(), secondValue.doubleValue());
+                result = ConstOperator.ADD.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
 
             case "-":
-                result = sub.operate(firstValue.doubleValue(), secondValue.doubleValue());
+                result = ConstOperator.SUB.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
 
             case "*":
-                result = mul.operate(firstValue.doubleValue(), secondValue.doubleValue());
+                result = ConstOperator.MUL.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
 
             case "/":
-                result = div.operate(firstValue.doubleValue(), secondValue.doubleValue());
+                result = ConstOperator.DIV.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
         }
