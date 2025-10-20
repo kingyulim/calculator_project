@@ -2,6 +2,8 @@ package Lv3;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) {
@@ -135,14 +137,55 @@ public class App {
                 }
             }
 
-            System.out.print("===================\n저장된 값중 내가 지정한 큰 결과값들을 출력 하시겠습니까?\n없다면 엔터를 눌러주세요.\n(출력 커멘드 : yes) : ");
-            String maxValueCommendInput = input.nextLine();
-            if (maxValueCommendInput.equalsIgnoreCase("yes")) {
-                while (true) {
-                    System.out.print("값을 지정해주세요 : ");
-                    int maxValueInput = input.nextInt();
+            ArrayList<Double> lastArrList = calculator.getResultArray();
+            if(lastArrList.size() > 1) {
+                System.out.print("===================\n저장된 값중 내가 지정한 큰 결과값들을 출력 하시겠습니까?\n없다면 엔터를 눌러주세요.\n(출력 커멘드 : yes) : ");
+                String maxValueCommendInput = input.nextLine();
 
-                    break;
+                if (maxValueCommendInput.equalsIgnoreCase("yes")) {
+                    while (true) {
+                        System.out.print("값을 지정해주세요 : ");
+
+                        if(!input.hasNextDouble()){
+                            System.out.println("숫자만 입력해주세요.");
+                            input.next();
+
+                            continue;
+                        }
+
+                        int maxValueInput = input.nextInt();
+                        input.nextLine();
+
+                        if(maxValueInput < 0){
+                            System.out.println("양수만 입력해주세요");
+
+                            continue;
+                        }
+
+                        // 호출자 메소드 파일에서 람다식 적용 ArrayList 형으로 뽑기
+                        /*
+                        ArrayList<Double> saveList = lastArrList.stream().sorted().filter(n -> n > maxValueInput).collect(Collectors.toCollection(ArrayList::new));
+                        String savaListString = calculator.thisArrayReturn(saveList);
+                         */
+
+                        // 인터페이스 파일을 만들어서 람다식 적용
+                        /*
+                        CalculatorInterpace saveValueReturn = (arr, v) -> arr.stream().sorted().filter(n -> n > v).collect(Collectors.toList());
+                        List<Double> saveList = saveValueReturn.saveListReturn(lastArrList, maxValueInput);
+                        */
+
+                        // 순수한 스트림 람다 적용
+                        List<Double> saveList = lastArrList.stream().sorted().filter(n -> n > maxValueInput).collect(Collectors.toList());
+
+                        String savaListString = calculator.thisArrayReturn(saveList);
+
+                        System.out.println("===================\n" + savaListString + "\n===================");
+
+                        System.out.print("더 지정 하시겠습니까?\n더 지정하시려면 엔터를 눌러주세요.\n(나가기 커멘드 : exit) : ");
+                        String savaListExit = input.nextLine();
+
+                        if (savaListExit.equalsIgnoreCase("exit")) break;
+                    }
                 }
             }
 

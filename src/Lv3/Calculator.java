@@ -1,7 +1,9 @@
 package Lv3;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Calculator {
     private ArrayList<Double> resultArray = new ArrayList<>(); // 계산된 값 저장 배열
@@ -114,7 +116,7 @@ public class Calculator {
      * @param resultArray 뽑아올 배열
      * @return 현재 존재하는 배열 데이터 문자열로 반환
      */
-    String thisArrayReturn (ArrayList resultArray) {
+    String thisArrayReturn (List resultArray) {
         String resultString = "";
         int length = resultArray.size();
 
@@ -140,6 +142,12 @@ public class Calculator {
     ArrayList<Double> getResultArray() {
         return resultArray;
     }
+
+    /*
+    <N extends Number> ArrayList<Double> savaArrayReturn(ArrayList<Double> arr, N value) {
+
+    }
+    */
 
     /**
      * 계산된 값 수정 메소드
