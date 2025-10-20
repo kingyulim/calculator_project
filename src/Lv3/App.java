@@ -39,14 +39,13 @@ public class App {
             /**
              * 연산 시작
              */
-            double sumValue = calculator.operatorMethod(firstValue, secondValue, operator);
+            double sumValue = 0;
+            try {
+                sumValue = calculator.operatorMethod(firstValue, secondValue, operator);
+            } catch(ArithmeticException e) {
+                System.out.println(e.getMessage());
 
-            if (operator == "/") {
-                if (secondValue == 0) {
-                    System.out.println("0으로 나눌 수 없습니다.");
-
-                    continue;
-                }
+                continue;
             }
 
             /**

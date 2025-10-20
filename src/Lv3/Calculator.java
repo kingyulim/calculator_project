@@ -35,6 +35,8 @@ public class Calculator {
                 break;
 
             case "/":
+                if(secondValue.doubleValue() == 0) throw new ArithmeticException("0으로 나눌 수 없습니다.");
+
                 result = ConstOperator.DIV.operate(firstValue.doubleValue(), secondValue.doubleValue());
 
                 break;
