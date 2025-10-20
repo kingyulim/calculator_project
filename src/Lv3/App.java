@@ -162,19 +162,6 @@ public class App {
                             continue;
                         }
 
-                        // 호출자 메소드 파일에서 람다식 적용 ArrayList 형으로 뽑기
-                        /*
-                        ArrayList<Double> saveList = lastArrList.stream().sorted().filter(n -> n > maxValueInput).collect(Collectors.toCollection(ArrayList::new));
-                        String savaListString = calculator.thisArrayReturn(saveList);
-                         */
-
-                        // 인터페이스 파일을 만들어서 람다식 적용
-                        /*
-                        CalculatorInterpace saveValueReturn = (arr, v) -> arr.stream().sorted().filter(n -> n > v).collect(Collectors.toList());
-                        List<Double> saveList = saveValueReturn.saveListReturn(lastArrList, maxValueInput);
-                        */
-
-                        // 순수한 스트림 람다 적용
                         List<Double> saveList = lastArrList.stream().sorted().filter(n -> n > maxValueInput).collect(Collectors.toList());
 
                         String savaListString = calculator.thisArrayReturn(saveList);
